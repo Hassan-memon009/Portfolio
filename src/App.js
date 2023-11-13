@@ -1,15 +1,18 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import Header from './Component/Header'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import {Route, Routes} from "react-router-dom";
+import WelcomePage from "./components/WelcomePage";
+import AllProjects from "./components/AllProjects";
 
 function App() {
-  return (
-    <>
-      <Header />
-    </>
-  )
+    return (<div>
+            <Header/>
+                <Routes>
+                    <Route path={'/'} element={<WelcomePage/>}/>
+                    <Route path={'/all-projects'} element={<AllProjects/>}/>
+                </Routes>
+            <Footer/>
+        </div>);
 }
 
-export default App
+export default App;
